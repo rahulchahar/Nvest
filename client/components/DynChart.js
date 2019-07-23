@@ -1,7 +1,9 @@
 import React, { PureComponent } from 'react';
 import { Label, LineChart, BarChart, Line, Bar, Brush, CartesianGrid, ReferenceLine,XAxis, YAxis, Tooltip, Highlight } from 'recharts';
 
-const data = [];
+const data = [
+{name:"1", uv:10000}
+];
 
 const initialState = {
   data,
@@ -27,7 +29,7 @@ export default class StreamingDemo extends React.Component {
       .then(currVal => this.setState({ currVal : Object.values(currVal)}));
       this.setState( ( { data : cdata, left = 0 } ) => {
       return { 
-        data : cdata.concat( { name : (cdata.length+1)+'', uv : 0} ), 
+        data : cdata.concat( { name : (parseInt(cdata[cdata.length-1].name) + 1)+'', uv : 0} ), 
         animation : true, 
         left : left - 45
         };
