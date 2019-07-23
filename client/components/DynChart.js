@@ -47,7 +47,6 @@ export default class StreamingDemo extends React.Component {
 
   render() {
     const { data, barIndex,animation, left, right } = this.state;
-    console.log(this.state.data);
     return (
       <div className="highlight-bar-charts">
       {this.props.coin}
